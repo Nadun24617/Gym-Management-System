@@ -272,10 +272,9 @@ public class Customer_Form extends javax.swing.JFrame {
         String E_name=txten.getName();
         String E_number=txtenum.getName();
         
-        //Create statement type object
-        Statement stmt=con.createStatement();
+         
         //Execute Query
-        String query="insert into Customer(First_Name,Last_Name,Address,NIC,Mobile_Number,E_Name,E_Number) value('+F_name+,'L_name,Address,NIC,Cus_number,E_name,E_number)";
+        String query="insert into Customer(First_Name,Last_Name,Address,NIC,Mobile_Number,E_Name,E_Number) value("+F_name+","+L_name+","+Address+","+NIC+","+Cus_number+","+E_name+","+E_number+")";
 
     }//GEN-LAST:event_Loginbtn1ActionPerformed
 
