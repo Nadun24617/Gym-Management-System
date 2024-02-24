@@ -17,13 +17,14 @@ public class DBconnection {
             //Load the JDBC Driver
             Class.forName("com.mysql.cj.jbdc.Driver");
             //Establish the connection
-            con=DriverManager.getConnection("","","");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gym_management_system","root","");
             //Create statement type object
             Statement stmt=con.createStatement();
             //Execute Query
             stmt.executeUpdate("insert into t1(name)value('NIBM')");
         }
-        catch(Exception e){}
+        catch(Exception e){
+            System.out.println("Error!"+e.getMessage());}
     }
     
 }
