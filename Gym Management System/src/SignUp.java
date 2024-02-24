@@ -1,6 +1,14 @@
 
+import com.sun.jdi.connect.spi.Connection;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -202,7 +210,21 @@ public class SignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SignUpbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpbtnActionPerformed
-        System.out.println("SIgn up button clicked");
+        //System.out.println("SIgn up button clicked");
+        String userName, Password, Address, email;
+        String SUrl,SUser, SPass;
+        
+        SUrl ="jdbc:mysql://localhost:3306/gym_management_system";
+        SUser="root";
+        SPass="";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(SUrl,SUser,SPass);
+            
+        } catch (Exception e) {
+            System.out.println("Error!"+e.getMessage());
+        }
+        
     }//GEN-LAST:event_SignUpbtnActionPerformed
     
     public void close(){
