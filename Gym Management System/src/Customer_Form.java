@@ -1,3 +1,7 @@
+
+import java.sql.Statement;
+import java.sql.*;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -268,6 +272,8 @@ public class Customer_Form extends javax.swing.JFrame {
         String E_name=txten.getName();
         String E_number=txtenum.getName();
         
+        //Create statement type object
+        Statement stmt=con.createStatement();
         //Execute Query
         String query="insert into Customer(First_Name,Last_Name,Address,NIC,Mobile_Number,E_Name,E_Number) value('+F_name+,'L_name,Address,NIC,Cus_number,E_name,E_number)";
 
