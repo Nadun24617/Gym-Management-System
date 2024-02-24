@@ -20,8 +20,7 @@ public class DBconnection {
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gym_management_system","root","");
             //Create statement type object
             Statement stmt=con.createStatement();
-            //Execute Query
-            stmt.executeUpdate("insert into t1(name)value('NIBM')");
+
         }
         catch(Exception e){
             System.out.println("Error!"+e.getMessage());}
