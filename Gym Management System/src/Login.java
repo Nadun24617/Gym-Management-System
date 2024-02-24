@@ -1,6 +1,13 @@
 
+import gym.management.system.Dashboard;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.sql.*;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -38,12 +45,12 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUname = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         Loginbtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         SignUpWindowbtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -182,6 +189,61 @@ public class Login extends javax.swing.JFrame {
 
     private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginbtnActionPerformed
         System.out.println("Login button clicked");
+        String userName, password, query, passdb = null;
+        String SUrl, SUser, SPass;
+        
+        SUrl="jdbc:mysql://localhost:3306/gym management system";
+        SUser="root";
+        SPass="";
+        
+        int notFound = 0;
+        try {
+        java.sql.Connection con = null;
+        // Load the JDBC Driver
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        // Establish the connection
+        con = DriverManager.getConnection(SUrl, SUser, SPass);
+        // Create statement type object
+        Statement stmt = con.createStatement();
+
+        if ("".equals(txtUname.getText())) {
+            JOptionPane.showMessageDialog(new JFrame(), "UserName is Required", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if ("".equals(txtPassword.getText())) {
+            JOptionPane.showMessageDialog(new JFrame(), "Password is Required", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            userName = txtUname.getText();
+            password = txtPassword.getText();
+
+            query = "select * from users where name='" + userName + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                passdb = rs.getString("password"); // Assuming the column name is "password" in your database
+                notFound = 1;
+            }
+
+            if (notFound == 1 && password.equals(passdb)) {
+                
+                Dashboard DashboardFrame=new Dashboard() ;
+                DashboardFrame.setVisible(true);
+                DashboardFrame.pack();
+                DashboardFrame.setLocationRelativeTo(null);
+                this.dispose();
+                
+                //JOptionPane.showMessageDialog(null, "Login successful!");
+                
+                
+            } else {
+                // Password not matched, show error message
+                JOptionPane.showMessageDialog(null, "Invalid username or password");
+            }
+
+            txtUname.setText("");
+            txtPassword.setText("");
+        }
+   
+        } catch (Exception e) {
+            System.out.println("Error!"+e.getMessage());
+        }
     }//GEN-LAST:event_LoginbtnActionPerformed
 
     /**
@@ -229,7 +291,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUname;
     // End of variables declaration//GEN-END:variables
 }

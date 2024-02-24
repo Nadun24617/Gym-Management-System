@@ -78,7 +78,7 @@
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="txtPassword" alignment="1" min="-2" pref="279" max="-2" attributes="0"/>
-                      <Component id="txtUname" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
+                      <Component id="txtUname" min="-2" pref="280" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -136,8 +136,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUname">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtPassword">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -199,6 +197,8 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Forget password?"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="txtPassword">
         </Component>
       </SubComponents>
     </Container>
