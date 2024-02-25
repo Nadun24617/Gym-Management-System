@@ -73,6 +73,7 @@ public class Login extends javax.swing.JFrame {
         Loginbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Loginbtn.setForeground(new java.awt.Color(255, 255, 255));
         Loginbtn.setText("LOGIN");
+        Loginbtn.setBorder(null);
         Loginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginbtnActionPerformed(evt);
@@ -87,6 +88,7 @@ public class Login extends javax.swing.JFrame {
         SignUpWindowbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SignUpWindowbtn.setForeground(new java.awt.Color(255, 255, 255));
         SignUpWindowbtn.setText("SING UP");
+        SignUpWindowbtn.setBorder(null);
         SignUpWindowbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignUpWindowbtnActionPerformed(evt);
@@ -142,11 +144,11 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(31, 31, 31)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(SignUpWindowbtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SignUpWindowbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
