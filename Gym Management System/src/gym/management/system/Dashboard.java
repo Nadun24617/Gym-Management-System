@@ -54,7 +54,7 @@ public class Dashboard extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pay.png"))); // NOI18N
         jButton1.setText("Payments");
-        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -66,7 +66,7 @@ public class Dashboard extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/people (1).png"))); // NOI18N
         jButton2.setText("Customers");
-        jButton2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
