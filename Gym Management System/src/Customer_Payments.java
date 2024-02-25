@@ -11,7 +11,7 @@ public class Customer_Payments extends javax.swing.JFrame {
 
     /**
      * Creates new form Customer_Payments
-     */
+     *///
     public Customer_Payments() {
         initComponents();
     }
