@@ -217,13 +217,16 @@ public class Login extends javax.swing.JFrame {
             query = "select * from users where name='" + userName + "'";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                passdb = rs.getString("password"); // Assuming the column name is "password" in your database
+                passdb = rs.getString("password"); //olumn name is "password" in your database
+                userName = rs.getString("name");
                 notFound = 1;
+                
             }
 
             if (notFound == 1 && password.equals(passdb)) {
                 
                 Dashboard DashboardFrame=new Dashboard() ;
+                DashboardFrame.setUser(userName);
                 DashboardFrame.setVisible(true);
                 DashboardFrame.pack();
                 DashboardFrame.setLocationRelativeTo(null);
