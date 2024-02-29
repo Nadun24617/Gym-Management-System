@@ -1,5 +1,4 @@
 
-import gym.management.system.Dashboard;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.sql.DriverManager;
@@ -219,7 +218,7 @@ public class Login extends javax.swing.JFrame {
             query = "select * from users where name='" + userName + "'";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                passdb = rs.getString("password"); //olumn name is "password" in your database
+                passdb = rs.getString("password"); // "password" in your database
                 userName = rs.getString("name");
                 notFound = 1;
                 

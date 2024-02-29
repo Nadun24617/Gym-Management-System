@@ -263,6 +263,7 @@ public class SignUp extends javax.swing.JFrame {
         close();
         Login li = new Login();
         li.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_LoginWindowbtnActionPerformed
 
     /**
