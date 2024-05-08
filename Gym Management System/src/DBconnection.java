@@ -15,9 +15,9 @@ public class DBconnection {
         {
             Connection con=null;
             //Load the JDBC Driver
-            Class.forName("com.mysql.cj.jbdc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             //Establish the connection
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gym_management_system","root","");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gym management system","root","");
             //Create statement type object
             Statement stmt=con.createStatement();
 
