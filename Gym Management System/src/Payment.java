@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.jar.Attributes.Name;
 import javax.swing.JTextField;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,6 +17,8 @@ import javax.swing.JTextField;
  * @author thanu
  */
 public class Payment extends javax.swing.JFrame {
+
+    private String Cus_ID;
 
     /**
      * Creates new form Payment
@@ -205,7 +208,8 @@ public class Payment extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {                                     
-        // TODO add your handling code here:
+
+        
     }                                    
 
     private void NICActionPerformed(java.awt.event.ActionEvent evt) {                                    
@@ -219,8 +223,19 @@ public class Payment extends javax.swing.JFrame {
     private void cus_idActionPerformed(java.awt.event.ActionEvent evt) {                                       
     String Cus_ID = cus_id.getText(); 
     payment1 payment = new payment1(Cus_ID);
-    payment.getpayee();
-      
+    
+        
+    String[] payeeInfo = payment.getPayeeInfo(); // Retrieve payee information
+    
+    if (payeeInfo != null && payeeInfo.length >= 2) {
+        // Set name and NIC text fields if payee information is retrieved successfully
+        name.setText(payeeInfo[0]); // Set name
+        NIC.setText(payeeInfo[1]); // Set NIC
+    } else {
+        // Handle case where payee information is not retrieved
+        name.setText(""); // Clear name field
+        NIC.setText(""); // Clear NIC field
+    }
     }                                      
 
     private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -326,4 +341,8 @@ public class Payment extends javax.swing.JFrame {
     private javax.swing.JRadioButton rmonthly;
     private javax.swing.JLabel type;
     // End of variables declaration                   
+
+    private void getPayeeInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
